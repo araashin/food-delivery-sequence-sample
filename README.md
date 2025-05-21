@@ -1,11 +1,37 @@
 # food-delivery-sequence-sample
-일상 속 소프트웨어 사용 사례 - 시퀀스 다이어그램 기반 구현(소웨공)
+일상 속 소프트웨어 사용 사례 중 하나인 **음식 배달 앱**을 주제로  
+시퀀스 다이어그램을 모델링하고, 이를 기반으로 Python 코드를 모듈 단위로 구현하였습니다.  
+본 프로젝트는 실생활에서 많이 사용되는 프로세스를 소프트웨어 관점에서 분석하고 구성하는 데에 중점을 두었습니다.
 
 # 시퀀스 다이어그램
 
-아래는 Mermaid.live에서 작성한 시퀀스 다이어그램입니다.
+아래는 Mermaid.live를 사용하여 작성한 시퀀스 다이어그램입니다.  
+**사용자 → 앱 → 음식점 → 배달 시스템** 간의 메시지 흐름을 표현했습니다.
 
 ![시퀀스 다이어그램](./sequence_diagram.png)
+
+## Mermaid 원본 코드
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant App
+    participant Restaurant
+    participant Delivery
+
+    User->>App: 앱 실행
+    App->>User: 메인 화면 표시
+    User->>App: 메뉴 탐색
+    App->>Restaurant: 메뉴 목록 요청
+    Restaurant-->>App: 메뉴 목록 반환
+    App-->>User: 메뉴 보여주기
+    User->>App: 음식 선택 + 장바구니 추가
+    User->>App: 결제 요청
+    App->>Restaurant: 주문 정보 전송
+    Restaurant-->>App: 주문 수락
+    App->>Delivery: 배달 요청
+    Delivery-->>App: 배달 시작 알림
+    App-->>User: 배달 진행 상황 표시
 
 ## 모듈 평가
 
@@ -14,11 +40,11 @@
 - `restaurant.py`: 메뉴 제공 및 주문 수락
 - `delivery.py`: 배달 시작 처리
 - `payment.py`: 결제 처리
-→ 높은 응집도를 유지함
+→ 높은 응집도를 유지하여 각 모듈의 명확한 역할 분리가 가능합니다.
 
 ### 결합도(Coupling)
-모든 모듈은 `app.py`에서 조정되며, 서로 직접 참조하지 않음.
-→ 낮은 결합도를 유지하여 유지보수에 유리함
+모든 모듈은 `app.py`에서 조정되며, 직접 서로를 참조하지 않습니다.
+→ 낮은 결합도를 유지하여 변경 및 유지보수에 유리합니다.
 
 ## ▶ 실행 방법
 
