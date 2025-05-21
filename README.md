@@ -32,6 +32,7 @@ sequenceDiagram
     App->>Delivery: 배달 요청
     Delivery-->>App: 배달 시작 알림
     App-->>User: 배달 진행 상황 표시
+```
 
 ## 모듈 평가
 
