@@ -10,6 +10,30 @@
 
 ![시퀀스 다이어그램](./sequence_diagram.png)
 
+## Mermaid 원본 코드
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant App
+    participant Restaurant
+    participant Delivery
+
+    User->>App: 앱 실행
+    App->>User: 메인 화면 표시
+    User->>App: 메뉴 탐색
+    App->>Restaurant: 메뉴 목록 요청
+    Restaurant-->>App: 메뉴 목록 반환
+    App-->>User: 메뉴 보여주기
+    User->>App: 음식 선택 + 장바구니 추가
+    User->>App: 결제 요청
+    App->>Restaurant: 주문 정보 전송
+    Restaurant-->>App: 주문 수락
+    App->>Delivery: 배달 요청
+    Delivery-->>App: 배달 시작 알림
+    App-->>User: 배달 진행 상황 표시
+```
+
 
 ## 모듈 평가
 
