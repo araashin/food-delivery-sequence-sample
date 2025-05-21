@@ -10,7 +10,8 @@
 
 ![시퀀스 다이어그램](./sequence_diagram.png)
 
-## Mermaid 원본 코드
+<details>
+<summary>📌 Mermaid 원본 코드 보기</summary>
 
 ```mermaid
 sequenceDiagram
@@ -32,8 +33,8 @@ sequenceDiagram
     App->>Delivery: 배달 요청
     Delivery-->>App: 배달 시작 알림
     App-->>User: 배달 진행 상황 표시
-```
-
+</details>
+ ```
 
 ## 모듈 평가
 
