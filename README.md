@@ -11,7 +11,9 @@
 ![시퀀스 다이어그램](./sequence_diagram.png)
 
 <details>
-<summary>📌 Mermaid 원본 코드 보기</summary>
+<summary>📌 Mermaid 원본 코드 보기 (펼치기)</summary>
+
+<br>
 
 ```mermaid
 sequenceDiagram
